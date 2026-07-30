@@ -1,0 +1,60 @@
+:root {
+  font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+  color: #2d241a;
+  background: #ddd9d1;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, input { font: inherit; }
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: radial-gradient(circle at 50% 42%, #f2f0eb 0, #dad6cf 58%, #c7c2b8 100%);
+}
+
+canvas { display: block; width: 100%; height: 100%; }
+
+.panel {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: min(310px, calc(100vw - 36px));
+  padding: 16px;
+  border: 1px solid rgba(88, 66, 40, .16);
+  border-radius: 14px;
+  background: rgba(250, 248, 243, .88);
+  box-shadow: 0 12px 38px rgba(58, 44, 28, .12);
+  backdrop-filter: blur(16px);
+}
+
+.title { margin: 0 0 4px; font-size: 17px; letter-spacing: .02em; }
+.subtitle { margin: 0 0 14px; color: #716655; font-size: 12px; line-height: 1.5; }
+.row { display: flex; align-items: center; gap: 9px; margin-top: 10px; }
+.row label { min-width: 62px; color: #5d5142; font-size: 12px; }
+.row input[type="range"] { flex: 1; accent-color: #997043; }
+
+button, select {
+  min-height: 34px;
+  border: 1px solid rgba(88, 66, 40, .2);
+  border-radius: 9px;
+  padding: 0 11px;
+  color: #43372a;
+  background: rgba(255, 255, 255, .72);
+  cursor: pointer;
+}
+button:hover, select:hover { background: #fff; }
+.buttons { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.selected { margin-top: 12px; min-height: 34px; padding: 9px 10px; border-radius: 9px; background: rgba(151, 109, 61, .09); font-size: 12px; }
+.stats { margin-top: 10px; color: #655947; font: 11px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-line; }
+.hint { position: absolute; right: 16px; bottom: 14px; color: rgba(55, 45, 34, .72); font-size: 11px; text-shadow: 0 1px 2px #fff; }
+
+@media (max-width: 640px) {
+  .panel { top: 10px; left: 10px; width: calc(100vw - 20px); padding: 12px; }
+  .subtitle { display: none; }
+  .hint { display: none; }
+}
